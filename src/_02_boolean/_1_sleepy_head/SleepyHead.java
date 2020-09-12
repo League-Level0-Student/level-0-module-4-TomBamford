@@ -11,6 +11,19 @@ public class SleepyHead {
 
 		/************************  SLEEPY HEAD  **************************/
 		boolean isWeekend;
+		String input = JOptionPane.showInputDialog("What day is it?");
+		if (input.equalsIgnoreCase("Saturday")) {
+		isWeekend = true;
+		JOptionPane.showMessageDialog(null, "You get to sleep in");
+		}
+		else if( input.equalsIgnoreCase("Sunday")) {
+			isWeekend = true;
+			JOptionPane.showMessageDialog(null, "You get to sleep in");
+		}else {
+			isWeekend = false;
+			JOptionPane.showMessageDialog(null, "Get out of bed and go to school!");
+		}
+		
 		// Write code to ask the user what day it is.
         
 		// Set the boolean isWeekend based on the value they enter
@@ -24,7 +37,18 @@ public class SleepyHead {
 		/************************   STAR STUDENT  **************************/
 
 		boolean passedExam;
-		// Write code to ask the user what percentage they scored in their last exam
+		String input1 = JOptionPane.showInputDialog("What percentage did you score in your last exam? Round up if necesary");
+		int score = Integer.parseInt(input1);
+		if (score > 69) {
+			isWeekend = true;
+			JOptionPane.showMessageDialog(null, "Congratulations on passing");
+		}
+		else {
+			isWeekend = false;
+			JOptionPane.showMessageDialog(null, "Better luck next time");
+		}
+		
+// Write code to ask the user what percentage they scored in their last exam
 
 		
 		// If they scored more than 70, they passed the exam.
@@ -41,12 +65,12 @@ public class SleepyHead {
 		// This code will repeat until gameIsOver is changed to true
 		while (!gameIsOver) {
 			// Ask the user if the game is over. 
-			String gameOver = JOptionPane.showInputDialog("is game over");
+			String gameOver = JOptionPane.showInputDialog("Is the game over? If so say yes, if not say no");
 			if (gameOver.equalsIgnoreCase("yes"))
 				gameIsOver = true;
-			
+				JOptionPane.showMessageDialog(null, "Game is over");
 			// If they answer "yes", change gameIsOver to true
-
+			
 		}
 		// Tell the user "game is over" 
 		
