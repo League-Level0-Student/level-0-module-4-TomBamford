@@ -40,11 +40,11 @@ public class SleepyHead {
 		String input1 = JOptionPane.showInputDialog("What percentage did you score in your last exam? Round up if necesary");
 		int score = Integer.parseInt(input1);
 		if (score > 69) {
-			isWeekend = true;
+			passedExam = true;
 			JOptionPane.showMessageDialog(null, "Congratulations on passing");
 		}
 		else {
-			isWeekend = false;
+			passedExam = false;
 			JOptionPane.showMessageDialog(null, "Better luck next time");
 		}
 		
@@ -66,9 +66,14 @@ public class SleepyHead {
 		while (!gameIsOver) {
 			// Ask the user if the game is over. 
 			String gameOver = JOptionPane.showInputDialog("Is the game over? If so say yes, if not say no");
-			if (gameOver.equalsIgnoreCase("yes"))
+			if (gameOver.equalsIgnoreCase("yes")) {
 				gameIsOver = true;
 				JOptionPane.showMessageDialog(null, "Game is over");
+			}
+			else {
+				gameIsOver = false;
+					JOptionPane.showMessageDialog(null, "Game isn't over");
+				}
 			// If they answer "yes", change gameIsOver to true
 			
 		}
@@ -78,10 +83,28 @@ public class SleepyHead {
 		/***********************   RED SQUARE  ********************/
 		
 		boolean isRed;
+		String red = JOptionPane.showInputDialog("What color do you want to draw with?");
+		if (red.equalsIgnoreCase("Red")) {
+			isRed = true;
+		}
+		else {
+			isRed = false;
+		}
 		// Ask the user what color to draw with. Based on their answer, set the isRed variable
 		
 		
-		boolean isSquare;		
+		boolean isSquare;
+		String Square = JOptionPane.showInputDialog("What shape do you want to draw?"); 
+		if (Square.equalsIgnoreCase("Square")) {
+			isSquare = true;
+		}
+		else {
+			isSquare = false;
+		}
+		
+		if (isRed == true && isSquare == true) {
+			drawRedSquare();
+		}
 		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
 		
 		
@@ -96,6 +119,13 @@ public class SleepyHead {
 	
 	static void drawRedSquare() {
 		Robot rob = new Robot();
+		rob.setSpeed(100);
+		rob.penDown();
+		rob.setPenColor(255,0,0);
+		for (int i = 1; i < 5; i++) {
+		rob.move(100);
+		rob.turn(90);
+		}
 		// Complete the rest of this method
 	}	
 }
