@@ -3,6 +3,8 @@ package _03_char._3_pi_aloud;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class PiAloud {
 	/***********  SOUND ***************
 	 * Some computers are unable to play sounds. 
@@ -10,6 +12,13 @@ public class PiAloud {
 	 * If you are not sure, ask your teacher 
 	 * *****************/
 	boolean canPlaySounds = true;
+	public static void main(String[] args) {
+	// 3..1415926535897932384
+		String pi = "3.1415926535897932384";
+		System.out.println(pi.charAt(0) + "" + pi.charAt(1) + "" + pi.charAt(2));
+		for (int i = 0; i < pi.length(); i++) {
+			System.out.println(pi.charAt(i));
+		}
 	
 	
 	// 1. Make a main method and make sure your program can run
@@ -31,7 +40,7 @@ public class PiAloud {
 	// *6. Get a character from the user using the getInputFromUser() method
 	// *7. Compare the users' char to the next digit of Pi
 	// *8. If they are correct, print out "correct". If they are not, print "incorrect" 
-	
+}
 	
 	
 	/********************  Use these methods. DON'T CHANGE THE CODE BELOW  ******************/

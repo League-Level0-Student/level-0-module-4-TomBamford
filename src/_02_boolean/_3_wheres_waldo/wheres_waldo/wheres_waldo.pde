@@ -22,20 +22,29 @@ void setup() {
 
 void draw() {
   background(waldo);
-  
 
   if (mousePressed) {
-    if (mouseX == 399 && mouseY == 227) {
+    if (mouseX>= 370 && mouseX <= 420) {
+      if (mouseY>= 195 && mouseY <= 280) {
       isFound = true;
+      }
+      else {
+      isFound = false;
+      }
     }
     else {
-      text("Waldo is not found!", 20, 30);
+      isFound = false;
     }
   }
   
   
   if(isFound) {
+    fill(#120E0E);
     text("Waldo Found!",20,30);
+  }
+  else {
+    fill(#120E0E);
+    text("Waldo is not Found!",20,30);
   }
       // If the user presses the mouse .......
   
